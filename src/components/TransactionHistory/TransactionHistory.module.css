@@ -1,0 +1,8 @@
+.tableItems:nth-child(2n+1) {
+    background: beige;
+}
+
+.tableItem{
+    justify-content: space-between;
+    
+}
