@@ -7,19 +7,13 @@
     align-items: center;
     margin: 0 auto;
 }
-/* .green{
-    background-color: green;
-}
-.red{
-    background-color: red;
-} */
+
 .avatar{
     margin: 20px 10px;
 }
 .status{
     width: 20px;
     height: 20px;
-    background-color: beige;
     border-radius: 50%;
     display: flex;
     margin: auto 0;

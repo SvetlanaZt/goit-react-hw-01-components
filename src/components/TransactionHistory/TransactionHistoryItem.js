@@ -1,28 +1,19 @@
+import PropTypes from 'prop-types';
+import css from './TransactionHistory.module.css';
 
-import TransactionHistory from './TransactionHistory'
-
-export default function TransactionHistoryItem({ transactions }) {
-    return (
-        <table style={{
-            margin: '0 auto',
-      }}>
-            <thead style={{
-            backgroundColor:'lightblue',
-      }}>
+export default function TransactionHistoryItem(props) {
+  const { type, amount, currency } = props;
+  return (
     <tr>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Currency</th>
+      <td className={css.tableItem}>{type}</td>
+      <td className={css.tableItem}>{amount}</td>
+      <td className={css.tableItem}>{currency}</td>
     </tr>
-  </thead>
-            {transactions.map(transaction => (
-                <TransactionHistory
-             key={transaction.id}
-               type={transaction.type}
-               amount={transaction.amount}
-               currency={transaction.currency}  />
-       ))  
+  );
 }
-        </table>)
-    
-}
+
+TransactionHistoryItem.propTypes = {
+  type: PropTypes.string.isRequired,
+  amount: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
+};

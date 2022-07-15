@@ -1,17 +1,17 @@
-import PropTypes from 'prop-types';
-import css from './Statistics.module.css'
+import StatisticsList from './StatisticList';
+import css from './Statistics.module.css';
 
-export default function Statistics(props) {
-    const {label, percentage } = props;
+export default function Statistics({ title, stats }) {
   return (
-    <li className={css.item}>
-     <span className={css.label}>{label}</span>
-      <span className={css.percentage}>{percentage}</span>
-    </li>
-     )
-}
-
-Statistics.propTypes = {
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
+    <section className={css.section}>
+      <h2 className={css.title}>{title}</h2>
+      <ul className={css.list}>
+        {stats.map(item => (
+          <li className={css.item} key={item.id}>
+            <StatisticsList label={item.label} percentage={item.percentage} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
 }

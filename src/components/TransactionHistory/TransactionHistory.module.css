@@ -6,3 +6,9 @@
     justify-content: space-between;
     
 }
+.thead{
+    background-color: lightblue;
+}
+.table{
+    margin: 0 auto;
+}

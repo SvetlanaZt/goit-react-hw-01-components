@@ -1,17 +1,24 @@
+import PropTypes from 'prop-types';
+import css from './Friends.module.css';
 
-import FriendList from './FriendList'
+export default function FriendListItem(props) {
+  const { avatar, name, isOnline } = props;
+  return (
+    <>
+      <span
+        className={css.status}
+        style={{ background: isOnline ? 'green' : 'red' }}
+      >
+        {isOnline}
+      </span>
+      <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
+      <p className={css.name}>{name}</p>
+    </>
+  );
+}
 
-export default function FriendListItem({ friends }) {
-    return (
-        <ul>
-            {friends.map(friend => (
-                <FriendList
-             key={friend.id}
-               avatar={friend.avatar}
-               name={friend.name}
-               isOnline={friend.isOnline}  />
-       ))  
-}
-        </ul>)
-    
-}
+FriendListItem.propTypes = {
+  isOnline: PropTypes.bool.isRequired,
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};

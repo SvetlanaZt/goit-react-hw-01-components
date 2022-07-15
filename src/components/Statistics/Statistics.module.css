@@ -8,3 +8,21 @@
     background-color: rgb(231, 241, 183);
     border: 2px solid gray;
 }
+.section{
+ width: 500px;
+ height: 250px;
+ display: block;
+ margin: 0 auto;
+}
+.title{
+display: flex;
+ justify-content: center;
+}
+.list{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    list-style: none;
+    color: #010101;
+     padding: 0;
+}
