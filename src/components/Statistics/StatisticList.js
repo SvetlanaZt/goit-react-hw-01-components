@@ -9,7 +9,8 @@ export default function StatisticsList({ label, percentage }) {
     </>
   );
 }
+
 StatisticsList.propTypes = {
   label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
+  percentage: PropTypes.string.isRequired,
 };
